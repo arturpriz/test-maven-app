@@ -18,7 +18,7 @@
 				<version>1.2.2</version>
 				<configuration>
 					<dockerDirectory>${project.basedir}</dockerDirectory>
-					<imageName>jenkins/apriz</imageName>
+					<imageName>jenkins/amazonlinux:test</imageName>
 					<registryUrl>https://549050352176.dkr.ecr.us-east-1.amazonaws.com</registryUrl>
 				</configuration>
 				<executions>
@@ -36,8 +36,8 @@
 							<goal>tag</goal>
 						</goals>
 						<configuration>
-							<image>jenkins/apriz</image>
-							<newName>549050352176.dkr.ecr.us-east-1.amazonaws.com/jenkins/apriz</newName>
+							<image>jenkins/amazonlinux:test</image>
+							<newName>549050352176.dkr.ecr.us-east-1.amazonaws.com/jenkins/amazonlinux:test</newName>
 						</configuration>
 					</execution>
 					<execution>
@@ -47,7 +47,7 @@
 							<goal>push</goal>
 						</goals>
 						<configuration>
-							<imageName>549050352176.dkr.ecr.us-east-1.amazonaws.com/jenkins/apriz</imageName>
+							<imageName>549050352176.dkr.ecr.us-east-1.amazonaws.com/jenkins/amazonlinux:test</imageName>
 						</configuration>
 					</execution>
 				</executions>
