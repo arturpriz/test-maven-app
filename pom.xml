@@ -1,15 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	
+<project>
 	<modelVersion>4.0.0</modelVersion>
-	
-	<groupId>com.example</groupId>
-	<artifactId>hello</artifactId>
-	<version>0.1-SNAPSHOT</version>
-	
+
+	<groupId>com.mycompany.app</groupId>
+	<artifactId>my-app</artifactId>
+	<version>1</version>
+
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
 	<build>
@@ -17,10 +15,10 @@
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
-				<version>0.4.10</version>
+				<version>1.2.2</version>
 				<configuration>
 					<dockerDirectory>${project.basedir}</dockerDirectory>
-					<imageName>apriz/${project.artifactId}</imageName>
+					<imageName>setevoy/${project.artifactId}</imageName>
 				</configuration>
 				<executions>
 					<execution>
@@ -33,5 +31,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 </project>
