@@ -10,6 +10,14 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
+	<distributionManagement>
+		<repository>
+			<id>internal.repo</id>
+			<name>Internal repo</name>
+			<url>file:///var/lib/jenkins/workspace/apriz-mvn</url>
+		</repository>
+	</distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -31,7 +39,7 @@
 					</execution>
 					<execution>
 						<id>tag-image</id>
-						<phase>install</phase>
+						<phase>deploy</phase>
 						<goals>
 							<goal>tag</goal>
 						</goals>
@@ -42,7 +50,7 @@
 					</execution>
 					<execution>
 						<id>push-image</id>
-						<phase>install</phase>
+						<phase>deploy</phase>
 						<goals>
 							<goal>push</goal>
 						</goals>
