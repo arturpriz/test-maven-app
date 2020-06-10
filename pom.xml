@@ -18,14 +18,37 @@
 				<version>1.2.2</version>
 				<configuration>
 					<dockerDirectory>${project.basedir}</dockerDirectory>
-					<imageName>setevoy/${project.artifactId}</imageName>
+					<imageName>jenkins/apriz</imageName>
+					<registryUrl>https://549050352176.dkr.ecr.us-east-1.amazonaws.com</registryUrl>
 				</configuration>
 				<executions>
 					<execution>
-						<phase>package</phase>
+						<id>build-image</id>
+						<phase>install</phase>
 						<goals>
 							<goal>build</goal>
 						</goals>
+					</execution>
+					<execution>
+						<id>tag-image</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>tag</goal>
+						</goals>
+						<configuration>
+							<image>jenkins/apriz</image>
+							<newName>549050352176.dkr.ecr.us-east-1.amazonaws.com/jenkins/apriz</newName>
+						</configuration>
+					</execution>
+					<execution>
+						<id>push-image</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>push</goal>
+						</goals>
+						<configuration>
+							<imageName>549050352176.dkr.ecr.us-east-1.amazonaws.com/jenkins/apriz</imageName>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
