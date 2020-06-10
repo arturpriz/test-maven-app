@@ -15,7 +15,7 @@
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
-				<version>1.2.2</version>
+				<version>1.2.1</version>
 				<configuration>
 					<dockerDirectory>${project.basedir}</dockerDirectory>
 					<imageName>jenkins/amazonlinux:test</imageName>
